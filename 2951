@@ -1,0 +1,2 @@
+class Solution:
+    findPeaks = lambda this, m: [i for i in range(1, len(m) - 1) if m[i - 1] < m[i] and m[i] > m[i + 1]]
