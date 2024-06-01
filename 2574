@@ -1,0 +1,7 @@
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+        left=list(accumulate(nums,initial=0))
+        right=list(accumulate(nums[::-1],initial=0))[:-1][::-1]
+        for i in range(len(nums)):
+            nums[i]=abs(left[i]-right[i])
+        return nums
