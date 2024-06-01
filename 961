@@ -1,13 +1,10 @@
-class Solution {
-    public int repeatedNTimes(int[] nums) {
-        int i,j;
-        for(i=0;i<nums.length;i++){
-            for(j=i+1;j<nums.length;j++){
-                if(nums[i]==nums[j]){
-                    return nums[i];
-                }
-            }
-        }
-        return nums[i];
-    }
-}
+class Solution:
+    def repeatedNTimes(self, nums: List[int]) -> int:
+        hashMap = defaultdict(int)
+
+        for i in nums:
+            hashMap[i] = hashMap[i] + 1
+
+        for key, value in hashMap.items():
+            if value != 1:
+                return key
