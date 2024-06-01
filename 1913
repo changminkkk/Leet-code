@@ -1,0 +1,27 @@
+class Solution:
+    def maxProductDifference(self, nums: List[int]) -> int:
+        # sort_num = sorted(nums)
+        # first = sort_num[0] * sort_num[1]
+        # last = sort_num[-1] * sort_num[-2]
+        # return last - first
+
+        small = float(inf)
+        smallest = float(inf)
+        big = float(-inf)
+        biggest = float(-inf)
+        for i in nums:
+            if i > biggest:
+                big = biggest
+                biggest = i
+                
+            else:
+                big = max(big, i)
+            
+            if i < smallest:
+                small = smallest
+                smallest = i
+            else:
+                small = min(small, i)
+        
+        return ((biggest * big) - (small * smallest))
+
