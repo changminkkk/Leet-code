@@ -1,0 +1,7 @@
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+        s=min(nums)
+        b=max(nums)
+        g=math.gcd(s,b)
+        return g
+        
