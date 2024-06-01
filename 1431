@@ -1,3 +1,4 @@
-class Solution:
-    def interpret(self, command: str) -> str:
-        return command.replace('()','o').replace('(al)','al')
+class Solution():
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        greatest: int = max(set(candies))
+        return [True if i + extraCandies >= greatest else False for i in candies]
