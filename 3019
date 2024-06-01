@@ -1,17 +1,8 @@
-class Solution {
-public:
-    int countKeyChanges(string s) {
-        int cnt =0;
-        if(isupper(s[0])){
-                s[0]=tolower(s[0]);
-            }
-        for(int i=1;i<s.size();i++){
-            char a = s[i];
-            if(isupper(a)){
-                s[i]=tolower(a);
-            }
-             if(s[i]!=s[i-1])cnt++;
-        }
-        return cnt;
-    }
-};
+class Solution:
+    def countKeyChanges(self, s: str) -> int:
+        s = s.lower()
+        count = 0
+        for i in range(len(s) - 1):
+            if s[i] != s[i+1]:
+                count += 1
+        return count
